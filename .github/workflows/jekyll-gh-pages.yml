@@ -18,3 +18,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - name: Build the site in the jekyll/builder container
+        run: |
+          docker run -d \
+            --name=code-server \
+            -e PASSWORD=password \
+            -e SUDO_PASSWORD=password \
+            -e SUDO_PASSWORD_HASH= \
+            -e PROXY_DOMAIN=localhost \
+            -p 8443:8443 \
+            lscr.io/linuxserver/code-server:latest
+          
+          
