@@ -18,7 +18,7 @@ jobs:
           -e PASSWORD=password \
           -e SUDO_PASSWORD=password \
           -e SUDO_PASSWORD_HASH= \
-          -e PROXY_DOMAIN=julianwe.github.io \
+          -e PROXY_DOMAIN=julianwe.github.io/docker-vnc/ \
           -p 8443:8443 \
           lscr.io/linuxserver/code-server:latest
     - name: Checkout
